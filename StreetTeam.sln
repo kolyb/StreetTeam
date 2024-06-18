@@ -3,9 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{4B06CFB4-768B-4235-93EC-BD12BA2C1887}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreetTeam.DataAccess", "source\StreetTeam.DataAccess\StreetTeam.DataAccess.csproj", "{532B41C8-D55E-4EB4-82CE-0D120A6D8CBA}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "StreetTeam.Database", "source\StreetTeam.Database\StreetTeam.Database.sqlproj", "{72E30327-FC93-419D-94B4-C3C6D9BEE3DE}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{532B41C8-D55E-4EB4-82CE-0D120A6D8CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532B41C8-D55E-4EB4-82CE-0D120A6D8CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532B41C8-D55E-4EB4-82CE-0D120A6D8CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532B41C8-D55E-4EB4-82CE-0D120A6D8CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72E30327-FC93-419D-94B4-C3C6D9BEE3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E30327-FC93-419D-94B4-C3C6D9BEE3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E30327-FC93-419D-94B4-C3C6D9BEE3DE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{72E30327-FC93-419D-94B4-C3C6D9BEE3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E30327-FC93-419D-94B4-C3C6D9BEE3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72E30327-FC93-419D-94B4-C3C6D9BEE3DE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{532B41C8-D55E-4EB4-82CE-0D120A6D8CBA} = {4B06CFB4-768B-4235-93EC-BD12BA2C1887}
+		{72E30327-FC93-419D-94B4-C3C6D9BEE3DE} = {4B06CFB4-768B-4235-93EC-BD12BA2C1887}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A84C04C-52AA-4E9E-9602-FD7665B21DD3}
