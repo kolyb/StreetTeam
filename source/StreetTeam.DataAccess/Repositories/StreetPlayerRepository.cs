@@ -1,38 +1,51 @@
-﻿using StreetTeam.DataAccess.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using StreetTeam.DataAccess.EntityFrameworkCore;
+using StreetTeam.DataAccess.Interfaces;
 using StreetTeam.DataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StreetTeam.DataAccess.Repositories
 {
     public class StreetPlayerRepository : IRepository<StreetPlayer>
     {
-        public Task CreateAsync(StreetPlayer item)
+        private readonly StreetTeamContext _db;
+
+        public StreetPlayerRepository(StreetTeamContext db)
         {
-            throw new NotImplementedException();
+            _db = db;
+            _db.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
-        public Task DeleteAsync(StreetPlayer item)
+        public async Task CreateAsync(StreetPlayer item)
         {
-            throw new NotImplementedException();
+            _db.StreetPlayers.Add(item);
+            await _db.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<StreetPlayer>> GetAllAsync()
+        public async Task DeleteAsync(StreetPlayer item)
         {
-            throw new NotImplementedException();
+            _db.StreetPlayers.Remove(item);
+            await _db.SaveChangesAsync();
         }
 
-        public Task<StreetPlayer> GetByIdAsync(int? id)
+        public IEnumerable<StreetPlayer> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.StreetPlayers.AsQueryable();
         }
 
-        public Task UpdateAsync(StreetPlayer item)
+        public async Task<StreetPlayer> GetByIdAsync(int? id)
         {
-            throw new NotImplementedException();
+            var result = await _db.StreetPlayers.FindAsync(id);
+            if (result == null)
+            {
+                throw new Exception();
+            }
+            return result;
+        }
+
+        public async Task UpdateAsync(StreetPlayer item)
+        {
+            _db.Entry(item).State = EntityState.Modified;
+            await _db.SaveChangesAsync();
         }
     }
 }

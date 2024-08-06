@@ -4,11 +4,11 @@ using StreetTeam.DataAccess.Models;
 
 namespace StreetTeam.DataAccess.EntityFrameworkCore
 {
-    public class StreatTeamContext : IdentityDbContext
+    public class StreetTeamContext : IdentityDbContext
     { 
-        public StreatTeamContext() { }
+        public StreetTeamContext() { }
 
-        public StreatTeamContext(DbContextOptions<StreatTeamContext> options) : base(options) { }
+        public StreetTeamContext(DbContextOptions<StreetTeamContext> options) : base(options) { }
 
         public DbSet<Event> Events { get; set; }
 
